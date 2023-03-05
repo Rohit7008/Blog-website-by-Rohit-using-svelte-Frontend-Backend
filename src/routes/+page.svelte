@@ -1,6 +1,8 @@
 <script>
 	import PostCard from '../lib/PostCard.svelte';
 	import logo from '/src/assets/logo.jpeg';
+	export let data;
+	let posts = data.posts || [];
 </script>
 
 <div class="flex-col text-center justify-center p-8 items-center border-b border-gray-200">
@@ -36,13 +38,11 @@
 </div>
 
 <div class="divide-y">
-	<PostCard
-		title="How I built a Blog with Svelte & SvelteKit."
-		description="What Is Svelte & SvelteKit?
-Svelte is a JavaScript framework, Svelte does not use a virtual DOM such as React or Vue for handling the state of the app. 
-
-The fact that no virtual DOM is used allows Svelte to be truly reactive. This means that we don’t have to do any hacks or boilerplate code to get a variable to rerender when we update the value. I think everyone who has written a React application sometimes has had trouble with this....... 
-"
-		href="/123-123 "
-	/>
+	{#if posts && posts.length}
+		{#each posts as post}
+			<PostCard title={post.name} description={post.desc} href={'/' + post._id} />
+		{/each}
+	{:else}
+		<p>Your data will show up here when you've configured everything correctly</p>
+	{/if}
 </div>
