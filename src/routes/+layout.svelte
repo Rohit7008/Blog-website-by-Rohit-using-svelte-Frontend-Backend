@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<div class="max-w-screen-sm min-h-screen mx-auto p-8">
+<div class="max-w-screen-sm min-h-screen mx-auto lg:p-8 p-4 ">
 	<slot />
    <!--- <footer>
 	<div class="divide-y">
