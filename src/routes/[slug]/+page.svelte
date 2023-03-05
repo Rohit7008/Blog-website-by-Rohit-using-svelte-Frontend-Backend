@@ -1,10 +1,22 @@
+<script>
+	import SKitlogo from '/src/assets/Sveltekit.png';
+	import Rskit1 from '/src/assets/RouteSkit1.jpeg';
+	import Lskit1 from '/src/assets/layoutskit1.jpeg';
+	import Dskit1 from '/src/assets/Dynamic.jpeg';
+	import BPskit1 from '/src/assets/Blogp.jpeg';
+	import BPost1 from '/src/assets/BP1.jpeg';
+	import BPost2 from '/src/assets/BP2.jpeg';
+	import LPost from '/src/assets/Listingpost.jpeg';
+	import LPost2 from '/src/assets/Listingpost2.jpeg';
+</script>
+
 <div class="p-8">
 	<a href="/" class="hover:underline">Back</a>
 	<div class="p-8  border-style: solid ">
 		<h1 class=" text-center font-semibold p-4 text-2xl">
 			How I built a Blog with Svelte & SvelteKit
 		</h1>
-		<img src="src/assets/1e5a13a9-35c1-4373-8eeb-0bbeda88a7d8.png" alt="intro image " />
+		<img src={SKitlogo} alt="Sveltekit logo " />
 		<div class="prose ">
 			<h1>What Is Svelte & SvelteKit?</h1>
 			<p class="p-2">
@@ -72,11 +84,7 @@
 				or using a secret key), you can name it +page.server.js instead. Both would do the same thing,
 				however the naming difference makes it much easier on a quick glance to identify what runs where.
 				So, an example of what the basic file structure for my website would look like:
-				<img
-					src="src/assets/WhatsApp Image 2023-03-04 at 10.56.30 PM.jpeg"
-					alt="Route.svelte"
-					class="p-4 bg-zinc-200"
-				/>
+				<img src={Rskit1} alt="Route.svelte 1" class="p-4 bg-zinc-200" />
 				Having multiple files in a folder might look a bit cumbersome at first, but it makes their purpose
 				much clearer. The great reasoning behind this pattern is that it gives you a single way of doing
 				routing instead of multiple, which makes things more standardized and easier to understand later
@@ -88,11 +96,7 @@
 				that I can have shared code for all pages in there. See the example below, where I added the
 				header and footer components to the layout, and load the content of the route itself in the <slot
 				/> element:
-				<img
-					src="src/assets/WhatsApp Image 2023-03-04 at 11.13.31 PM.jpeg"
-					alt="layout.svelte"
-					class="p-4 bg-zinc-200"
-				/>
+				<img src={Lskit1} alt="layout.svelte" class="p-4 bg-zinc-200" />
 			</div>
 		</div>
 		<div class="prose">
@@ -117,7 +121,7 @@
 			blog-article, wrapped in parentheses to indicate it uses its own layout. The routes directory ended
 			up like this:
 			<img
-				src="src/assets/WhatsApp Image 2023-03-04 at 11.24.57 PM.jpeg"
+				src={Dskit1}
 				alt="dynamic routing"
 				class="bg-zinc-200 p-4
 			"
@@ -171,11 +175,7 @@
 				I found out when searching that we can import all the .md files as modules, and process them
 				via JS, since this code will run on the server. I ended up creating a posts.js file to
 				centralize this logic, and did the following:
-				<img
-					src="src/assets/WhatsApp Image 2023-03-05 at 10.33.36 PM.jpeg"
-					alt="postjs.svelte"
-					class="bg-zinc-200 p-4"
-				/>
+				<img src={BPskit1} alt="postjs.svelte" class="bg-zinc-200 p-4" />
 				With that data being exported from that file, I can reuse it in the places I need:
 			</div>
 		</div>
@@ -185,16 +185,9 @@
 				On the routes/[slug]/+page.svelte file, I can now import the posts and look for the one I
 				should display (by comparing slugs). After that, I’ll get its module and use the special
 				svelte:component (see docs) tag to use it inside the page.
-				<img
-					src="src/assets/WhatsApp Image 2023-03-05 at 10.38.16 PM.jpeg"
-					alt="slug/+page.svelte"
-					class="bg-zinc-200 p-4"
-				/>
+				<img src={BPost1} alt="slug/+page.svelte" class="bg-zinc-200 p-4" />
 				<div>
-					<img
-						src="src/assets/WhatsApp Image 2023-03-05 at 10.42.36 PM.jpeg"
-						alt="slug/+page.svelte2"
-					/>
+					<img src={BPost2} alt="slug/+page.svelte2" />
 				</div>
 			</div>
 		</div>
@@ -209,20 +202,13 @@
 				<br />
 				<br />
 				<h2 class="bg bg-zinc-200">blog/+page.server.js</h2>
-				<img
-					src="src/assets/WhatsApp Image 2023-03-05 at 10.46.49 PM.jpeg"
-					alt="blog/+page.server.js"
-					class="bg-zinc-200 p-4"
-				/>
+				<img src={LPost} alt="blog/+page.server.js" class="bg-zinc-200 p-4" />
 				And, on the page itself:
 				<br />
 				<br />
 				<div>
 					<h2 class="bg bg-zinc-200">blog/+page.server.js</h2>
-					<img
-						src="src/assets/WhatsApp Image 2023-03-05 at 10.48.25 PM.jpeg"
-						alt="blog/+page.server.js"
-					/>
+					<img src={LPost2} alt="blog/+page.server.js" />
 				</div>
 			</div>
 		</div>
@@ -269,13 +255,12 @@
 				<br />
 				Don’t forget all the code for this website and blog are open source, feel free to use it and
 				to propose changes if you’d like!
-				<br>
+				<br />
 				Thanks for reading!
 			</div>
 		</div>
-		<div class="border-b border-gray-200 justify-center">
-		</div>
-		<div class="items-center"> 
+		<div class="border-b border-gray-200 justify-center" />
+		<div class="items-center">
 			<a
 				href="https://github.com/rohit7008"
 				class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-2.5 inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"

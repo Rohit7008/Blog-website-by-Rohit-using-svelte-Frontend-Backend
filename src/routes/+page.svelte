@@ -1,14 +1,11 @@
 <script>
 	import PostCard from '../lib/PostCard.svelte';
+	import logo from '/src/assets/logo.jpeg';
 </script>
 
 <div class="flex-col text-center justify-center p-8 items-center border-b border-gray-200">
 	<div class="rounded-full mx-auto flex-shrink-0 h-48 w-48 overflow-hidden">
-		<img
-			class="object-cover"
-			src="src/assets/WhatsApp Image 2023-02-17 at 10.38.17 PM.jpeg"
-			alt="Rohits img"
-		/>
+		<img class="object-cover" src={logo} alt="Rohits img" />
 	</div>
 	<div class="mt-4">
 		<h1 class=" font-sans text-3xl font-bold">Rohit Pottavathini</h1>
